@@ -8,5 +8,5 @@ conn = pyodbc.connect(conn)
 cursor = conn.cursor()
 
 
-cursor.close()
-conn.close()
+#cursor.close()
+#conn.close()

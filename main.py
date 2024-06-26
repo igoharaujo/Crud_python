@@ -3,22 +3,19 @@ from os import write
 import streamlit as st;
 import controllers.ClienteController as ClienteController
 import models.Cliente as cliente
+import pandas as pd
+import Pages.Cliente.Create as PageIncluirCliente
+import Pages.Cliente.List as PageListCliente
 
-st.title('Incluir Cliente')
-
-with st.form(key='include_cliente'):
-    input_name = st.text_input(label="Insira seu nome*")
-    input_age = st.number_input(label="Insira sua idade*", format="%d", step=1)
-    input_occupation = st.selectbox(label="Selecione sua profissão", options=['Desenvolvedor', 'Engenheiro', 'Desing'])
-    input_button_submit = st.form_submit_button("Enviar")
+st.sidebar.title('Menu')
+page_cliente = st.sidebar.selectbox('Cliente', ['Incluir', 'Alterar', 'Excluir', 'Consultar'])
 
 
-if input_button_submit:
-    cliente.nome = input_name
-    cliente.idade = input_age
-    cliente.profissao = input_occupation
+if page_cliente == 'Consultar':
+    PageListCliente.List()
 
-    ClienteController.incluir(cliente)
-    st.success('Operação bem sucedida')
+if page_cliente == 'Incluir':
+    PageIncluirCliente.IncluirClientePage()
 
     
+
