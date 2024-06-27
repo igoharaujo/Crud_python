@@ -23,7 +23,7 @@ O projeto está organizado em vários módulos, cada um responsável por uma par
 
 - **Tela Principal**: Esta é a tela inicial onde é possível realizar a inclusão de novos clientes.
 
-![Tela Principal](./img/tela1.png)
+![Tela Principal](./img/tela1.jpeg)
 
 ---
 
